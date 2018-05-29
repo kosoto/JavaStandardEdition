@@ -2,13 +2,12 @@ import java.util.Scanner;
 public class HowMuch{
 	public static void main(String[] args){
 		Scanner scan = new Scanner(System.in);
+		
 		System.out.println("얼마에요?");
-
 		int num1 = scan.nextInt();
 		System.out.println(num1 + "원입니다.");
 
 		System.out.println("몇개 드릴까요?");
-
 		int num2 = scan.nextInt();
 		System.out.println(num2 + "개 주세요.");
 
@@ -19,13 +18,10 @@ public class HowMuch{
 		System.out.println("몇 퍼센트 DC 할까요?");
 		
 		int dc = scan.nextInt();
-		String ans = "";
-		double num4 = num3 * (100-dc) * 0.01;
-		int num5 = (int)num4;
-		if(dc>=10){
-			ans = "안 팔아요.";
-		}else{
-			ans = num5 + "원 입니다.";
+		String ans = "안 팔아요.";
+		int num4 = num3 * (100 - dc) /100;
+		if(dc<10){
+			ans = num4 + "원 입니다.";
 		}
 		System.out.println(ans);
 	}
