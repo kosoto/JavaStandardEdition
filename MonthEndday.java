@@ -5,12 +5,18 @@ public class MonthEndday{
 		System.out.print("월을 숫자로 입력하세요.");
 		String month = scan.next();
 
-		String end ="31";
+		String end = "잘못 입력하였습니다.";
 		switch(month){
-			case "4" : case "6" :case "9" :case "11": end ="30";break;
-			case "2": end = "28"; break;
+			case "4" : case "6" : case "9" : case "11" : end = "30"; break;
+			case "2" : end = "28"; break;
+			case "1" : case "3" : case "5" : case "7" : case "8" : case "10" : case "12" : end = "31"; break;
 		}
-
-		System.out.print("말일이 " + month + "월" + end + "일입니다."); 
+		String result = "";
+		if (!end.equals("잘못 입력하였습니다.")){
+			result = "말일이 " + month + "월" + end + "일입니다.";
+		}else{
+			result = end;
+		}
+		System.out.print(result); 
 	}
 }
